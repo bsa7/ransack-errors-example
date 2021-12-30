@@ -1,0 +1,9 @@
+<%= simple_form_for(@search, url: companies_path) do |f| %>
+  <%= @search.methods.sort %>
+  <h2>Errors:</h2>
+  <%= @search.errors.messages %>
+  <label>Name:</label>
+  <%= f.input :name %>
+
+  <%= submit_tag('Search', class: 'btn') %>
+<% end %>
