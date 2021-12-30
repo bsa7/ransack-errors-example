@@ -26,6 +26,6 @@ class CompanySearchForm
   end
 
   def validate
-    errors.add(:name) if name.blank?
+    errors.add(:name) if name.size > 5
   end
 end

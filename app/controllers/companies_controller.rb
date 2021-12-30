@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
   def index
     @search = CompanySearchForm.new(name: company_search_params[:name])
     @search.validate
-    @companies = Company.ransack(name: company_search_params[:name]).result
+    @companies = Company.ransack(name_eq: company_search_params[:name]).result
   end
 
   # GET /companies/1 or /companies/1.json
@@ -72,7 +72,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_search_params
-    params.permit(:name)
+    params.require(:company_search_form).permit(:name)
   end
 
   def search_form

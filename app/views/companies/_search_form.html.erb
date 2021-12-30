@@ -1,7 +1,4 @@
-<%= simple_form_for(@search, url: companies_path) do |f| %>
-  <%= @search.methods.sort %>
-  <h2>Errors:</h2>
-  <%= @search.errors.messages %>
+<%= simple_form_for(@search, url: companies_path, method: :get) do |f| %>
   <label>Name:</label>
   <%= f.input :name %>
 
