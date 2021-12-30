@@ -10,22 +10,11 @@ class CompanySearchForm
 
   validates :name, presence: true
 
-  def persisted?
-    false
-  end
-
   def initialize(name:)
     @name = name
   end
 
-  def valid?
-    validate
-    return false if errors.blank?
-
-    true
-  end
-
   def validate
-    errors.add(:name, 'size of search is too long') if name.size > 5
+    errors.add(:name, 'size of search is too long') if name&.size&.positive? && name.size > 5
   end
 end

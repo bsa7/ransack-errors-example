@@ -72,6 +72,8 @@ class CompaniesController < ApplicationController
   end
 
   def company_search_params
+    return {} unless params.key?(:company_search_form)
+
     params.require(:company_search_form).permit(:name)
   end
 
