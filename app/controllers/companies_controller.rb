@@ -77,7 +77,6 @@ class CompaniesController < ApplicationController
 
   def search_form
     form = ::CompanySearchForm.new(name: company_search_params[:name])
-    binding.pry
     form.validate
     form
   end
