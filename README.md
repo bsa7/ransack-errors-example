@@ -1,6 +1,6 @@
 # README
 
-This example demonstrates validations of ransach search form.
+This example demonstrates validations of ransack search form.
 
 ## To run example:
 
